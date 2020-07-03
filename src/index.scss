@@ -1,0 +1,208 @@
+@import "../node_modules/athena-css/src/abstracts/";
+
+$colors: (
+  "red": #d74247,
+  "blue": #2f74b7,
+  "green": #45a049,
+  "purple": #7442c8,
+  "teal": #66b2b2,
+  "grey": #b6b6b6,
+  "orange": #fe9f01,
+  "yellow": #ffd300,
+  "turquoise": #14d4e0,
+  "cello": #364f6b,
+  "rose": #fc5185,
+  "dark-grey": #818181,
+  "indigo": #3f51b5,
+  "black": #000,
+  "white": #fff,
+);
+/*! purgecss start ignore */
+@import "../node_modules/athena-css/src/base/";
+/*! purgecss end ignore */
+@import "../node_modules/athena-css/src/utilities/";
+
+/*! purgecss start ignore */
+.opacity-0 {
+  opacity: 0;
+}
+
+.z-index-200 {
+  z-index: 200;
+}
+.list-none {
+  list-style: none;
+}
+body {
+  font-family: Montserrat;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #14d4e0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken(#14d4e0, 10%);
+}
+
+.highlight {
+  box-shadow: 0 0 15px 3px rgba(20, 212, 224, 0.1), inset 0 0 0 2px #fff;
+}
+
+.hexagon {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% * 0.57735);
+  i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48px;
+    z-index: 100;
+    text-shadow: 0 0 10px rgba(20, 212, 224, 0.5);
+  }
+  &:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    position: absolute;
+    right: calc((100% / 2) - ((100% * 0.57735) / 2));
+    top: 0;
+    transform: rotateZ(60deg);
+    width: inherit;
+    z-index: 0;
+  }
+
+  &:before {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    position: absolute;
+    right: calc((100% / 2) - ((100% * 0.57735) / 2));
+    top: 0;
+    transform: rotateZ(-60deg);
+    width: inherit;
+    z-index: 0;
+  }
+}
+.word-spacing-loose {
+  word-spacing: 0.4em;
+}
+
+#word-sphere-canvas {
+  width: 88%;
+  margin-right: 12%;
+}
+.section-anchor {
+  position: absolute;
+  top: -100px;
+}
+
+.title {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.pt-18 {
+  padding-top: 12rem;
+}
+@media (min-width: 600px) {
+  .sm\:border-b-none {
+    border-bottom: none !important;
+  }
+}
+
+.highlight-first-letter {
+  &:first-letter {
+    text-shadow: 0 0 10px rgba(20, 212, 224, 0.5);
+    @extend .font-2xl, .text-rose-500;
+  }
+}
+
+.highlight-letter {
+  text-shadow: 0 0 10px rgba(20, 212, 224, 0.5);
+}
+
+.animated-outline {
+  transition: color 0.25s;
+  background: none;
+  border: 0;
+  box-shadow: 0 0 15px 3px rgba(20, 212, 224, 0.1), inset 0 0 0 2px #fff;
+  color: #fff;
+
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &::before,
+  &::after {
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  // This covers the top & right borders (expands right, then down)
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  // And this the bottom & left borders (expands left, then up)
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &.active {
+    color: #fc5185;
+  }
+
+  // Hover styles
+  &.active::before,
+  &.active::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.active::before {
+    border-top-color: #fc5185; // Make borders visible
+    border-right-color: #fc5185;
+    transition: width 0.25s ease-out,
+      // Width expands first
+        height 0.25s ease-out 0.25s; // And then height
+  }
+
+  &.active::after {
+    border-bottom-color: #fc5185; // Make borders visible
+    border-left-color: #fc5185;
+    transition: border-color 0s ease-out 0.5s,
+      // Wait for ::before to finish before showing border
+        width 0.25s ease-out 0.5s,
+      // And then exanding width
+        height 0.25s ease-out 0.75s; // And finally height
+  }
+}
+/*! purgecss end ignore */
