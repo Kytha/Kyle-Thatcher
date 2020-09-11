@@ -34,7 +34,7 @@ const Navbar = ({ nav }) => {
           nav === "contact" ? "text-rose-500" : "text-white-500"
         }`}
       >
-        Contact
+        <a href="mailto:thatchek@mcmaster.ca">Contact</a>
       </li>
     </ul>
   );

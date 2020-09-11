@@ -124,7 +124,7 @@ export function createWordSphere(canvas, texts, counts, options) {
       const alpha = 0.6 + 0.4 * (x / radius);
       const size = (text.fontSize || fontSize) + 2 + 5 * (x / radius);
       ctx.fillStyle = `rgba(${text.color || "256,256,256"},${alpha})`;
-      ctx.font = ` 600 ${size}px "Open Sans"`;
+      ctx.font = ` 600 ${size}px "Montserrat"`;
       ctx.fillText(text.text, y + width / 2, -z + height / 2);
 
       ix--;

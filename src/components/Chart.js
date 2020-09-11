@@ -24,6 +24,9 @@ class Chart extends React.Component {
               background: "#ffffff",
               opacity: 1,
             },
+            offsetY: 0,
+            startAngle: 0,
+            endAngle: 270,
             dataLabels: {
               name: {
                 fontSize: "22px",
@@ -38,7 +41,18 @@ class Chart extends React.Component {
             },
           },
         },
-        labels: ["Frontend", "Backend", "Game Dev", "Design"],
+        labels: ["Frontend", "Backend", "Game Dev", "Machine Learning"],
+        legend: {
+          show: true,
+          floating: true,
+          fontSize: "16px",
+          position: "left",
+          offsetX: 0,
+          offsetY: 15,
+          labels: {
+            colors: ["#fc5185"],
+          },
+        },
       },
     };
   }
@@ -46,7 +60,7 @@ class Chart extends React.Component {
   render() {
     return (
       <Waypoint
-        onEnter={() => this.setState({ series: [90, 70, 60, 50] })}
+        onEnter={() => this.setState({ series: [90, 70, 60, 60] })}
         topOffset="40%"
         bottomOffset="40%"
       >

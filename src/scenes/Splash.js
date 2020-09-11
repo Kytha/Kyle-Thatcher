@@ -1,7 +1,7 @@
 import React from "react";
-import { useViewport } from "./lib/hooks";
+import { useViewport } from "../lib/hooks";
 import Particles from "react-particles-js";
-import canvasParams from "./config/canvasParams.json";
+import { canvasParams } from "../lib/data";
 import { Waypoint } from "react-waypoint";
 
 const Splash = ({ onNav }) => {

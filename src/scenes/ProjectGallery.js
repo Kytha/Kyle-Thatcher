@@ -1,17 +1,17 @@
 import React from "react";
-import Section from "./Section";
-import ProjectCard from "./ProjectCard";
+import Section from "../components/Section";
+import ProjectCard from "../components/ProjectCard";
 import Anime from "@mollycule/react-anime";
 import animejs from "animejs";
+import { projects } from "../lib/data";
 
 const ProjectGallery = ({ onNav }) => {
   const [show, setShow] = React.useState(false);
-  const arr = [0, 0, 0, 0];
   return (
     <Section
       title="Project Gallery"
       onNav={() => {
-        onNav("projects");
+        onNav("projects")();
         setTimeout(() => setShow(true), 400);
       }}
       name="projects"
@@ -31,10 +31,17 @@ const ProjectGallery = ({ onNav }) => {
           }}
           duration={500}
         >
-          {arr.map((e, i) => {
+          {projects.map((project, i) => {
             return (
               <div className="col-lg-6 flex jc-center opacity-0" key={i}>
-                <ProjectCard />
+                <ProjectCard
+                  img={project.img}
+                  name={project.name}
+                  github={project.github}
+                  demo={project.demo}
+                  website={project.website}
+                  description={project.description}
+                />
               </div>
             );
           })}

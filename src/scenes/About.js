@@ -1,9 +1,9 @@
 import React from "react";
-import Section from "./Section";
-import SectionTypography from "./SectionTypography";
-import TraitCard from "./TraitCard";
-import { traits } from "./config/traits";
-import Chart from "./Chart";
+import Section from "../components/Section";
+import SectionTypography from "../components/SectionTypography";
+import TraitCard from "../components/TraitCard";
+import { traits } from "../lib/data";
+import Chart from "../components/Chart";
 import Anime from "@mollycule/react-anime";
 import animejs from "animejs";
 
@@ -52,15 +52,16 @@ const About = ({ onNav }) => {
       </div>
       <div className="col-lg-6">
         <SectionTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          nisi sem, consectetur ac tincidunt sit amet, tempus et lorem.
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas.
+          I'm a computer engineering student with a passion for software
+          development and web technologies. I enjoy creating new things and
+          solving problems with elegant code. I believe my quick learning
+          abilities and great communication skills would be an asset to any
+          developer team!
         </SectionTypography>
         <SectionTypography>
-          Tempus ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          nisi sem, consectetur ac{" "}
-          <a className="text-rose-500 underline">tincidunt</a> sit amet.
+          I'm most experience with frontend development, but also have
+          experience and a passion for backend, game design, and machine
+          learning.
         </SectionTypography>
       </div>
     </Section>

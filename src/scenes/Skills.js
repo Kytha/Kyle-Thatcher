@@ -1,7 +1,7 @@
 import React from "react";
-import SectionTypography from "./SectionTypography";
-import WordSphere from "./WordSphere";
-import Section from "./Section";
+import SectionTypography from "../components/SectionTypography";
+import WordSphere from "../components/WordSphere";
+import Section from "../components/Section";
 import Anime from "@mollycule/react-anime";
 
 const Skills = ({ onNav }) => {
@@ -11,22 +11,28 @@ const Skills = ({ onNav }) => {
       title="Skills & Tech"
       className="ai-center"
       onNav={() => {
-        onNav("skills");
+        onNav("skills")();
         setTimeout(() => setShow(true), 400);
       }}
       name="skills"
     >
       <div className="col-lg-6">
         <SectionTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          nisi sem, consectetur ac tincidunt sit amet, tempus et lorem.
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas.
+          I'm well versed in a wide variety of languages, libraries, and
+          frameworks for modern web applications. Specifically, I have
+          experience creating applications using WAMP, MERN, and Django stacks
+          in combination with state management libraries such as Redux and
+          Apollo.
         </SectionTypography>
         <SectionTypography className="text-white-500 word-spacing-loose">
-          Tempus ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          nisi sem, consectetur ac{" "}
-          <a className="text-rose-500 underline">tincidunt</a> sit amet.
+          If you'd like to see more of my skills, check out my{" "}
+          <a
+            className="text-rose-500 underline"
+            href="https://github.com/Kytha"
+          >
+            github
+          </a>{" "}
+          to see all the projects I am working on :)
         </SectionTypography>
       </div>
       <div className="col-lg-6">

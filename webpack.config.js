@@ -3,9 +3,6 @@ const isProduction = process.env.NODE_ENV === "production";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const ModuleConcatenationPlugin = require("webpack").optimize
-  .ModuleConcatenationPlugin;
 
 const outputDirectory = "dist";
 
@@ -47,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         loader: "file-loader",
         options: {
           name: "[path][name].[ext]",
@@ -56,9 +53,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ModuleConcatenationPlugin(),
     new CleanWebpackPlugin(),
-    new MinifyPlugin(),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
     new MiniCssExtractPlugin({
       filename: isProduction ? "[name].[hash].css" : "[name].css",

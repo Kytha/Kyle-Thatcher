@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { words, counts, options, createWordSphere } from "./lib/wordSphere";
+import { words, counts, options, createWordSphere } from "../lib/wordSphere";
 
 const WordSphere = (props) => {
   useEffect(() => {

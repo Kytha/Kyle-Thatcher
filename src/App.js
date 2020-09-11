@@ -1,16 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Splash from "./splash";
-import About from "./About";
-import Skills from "./Skills";
-import ProjectGallery from "./ProjectGallery";
-import Navbar from "./Navbar";
+import Splash from "./scenes/Splash";
+import About from "./scenes/About";
+import Skills from "./scenes/Skills";
+import ProjectGallery from "./scenes/ProjectGallery";
+import Navbar from "./components/Navbar";
 
 const App = (props) => {
   const [nav, setNav] = React.useState(null);
   const onNav = (nav) => (e) => {
     setNav(nav);
   };
+  console.log(nav);
   return (
     <>
       <Splash onNav={onNav} />
